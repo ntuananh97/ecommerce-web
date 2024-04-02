@@ -19,7 +19,8 @@ app.use(compression()); // reduce the size of the response body and increase the
 require('./dbs/init.mongodb');
 
 // init routes
-app.get('/', (req, res, next) => { res.send('Hello, world!'); });
+app.use('/', require('./routers/index'));
+// app.get('/', (req, res, next) => { res.send('Hello, world!'); });
 
 // handle errors
 
